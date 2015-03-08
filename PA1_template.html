@@ -222,10 +222,29 @@ setwd(&quot;C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssess
 <pre><code class="r">unzip(zipfile=&quot;activity.zip&quot;)
 data &lt;- read.table(file=&quot;activity.csv&quot;, header=TRUE, sep=&quot;,&quot;, 
     colClasses=c(&quot;numeric&quot;,&quot;character&quot;,&quot;integer&quot;))
-summarize(data)
+head(data)
 </code></pre>
 
-<pre><code>## Error in eval(expr, envir, enclos): could not find function &quot;summarize&quot;
+<pre><code>##   steps       date interval
+## 1    NA 2012-10-01        0
+## 2    NA 2012-10-01        5
+## 3    NA 2012-10-01       10
+## 4    NA 2012-10-01       15
+## 5    NA 2012-10-01       20
+## 6    NA 2012-10-01       25
+</code></pre>
+
+<pre><code class="r">summary(data)
+</code></pre>
+
+<pre><code>##      steps            date              interval     
+##  Min.   :  0.00   Length:17568       Min.   :   0.0  
+##  1st Qu.:  0.00   Class :character   1st Qu.: 588.8  
+##  Median :  0.00   Mode  :character   Median :1177.5  
+##  Mean   : 37.38                      Mean   :1177.5  
+##  3rd Qu.: 12.00                      3rd Qu.:1766.2  
+##  Max.   :806.00                      Max.   :2355.0  
+##  NA&#39;s   :2304
 </code></pre>
 
 <h2>What is mean total number of steps taken per day?</h2>
