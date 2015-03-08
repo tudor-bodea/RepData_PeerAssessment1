@@ -12,13 +12,13 @@ output:
 The following **(i)** removes (almost) everything in the working `R` environment, **(ii)** loads the contributed `R` package `knitr` and sets its global option `echo` for all `R` code chunks to `TRUE`, and **(iii)** sets the working directory. Unless otherwise specified, `opts_chunk$set(echo=TRUE)` requires `R` through `knitr` to include the `R` source code in the output file. 
 
 ```{r SetOptions, echo=TRUE}
-# REMOVE ALMOST EVERYTHING IN THE WORKING ENVIRONMENT
+##### REMOVE ALMOST EVERYTHING IN THE WORKING ENVIRONMENT
 rm(list=ls(all=TRUE))
-# LOAD THE knitr PACKAGE
+##### LOAD THE knitr PACKAGE
 library(knitr)
-# SET GLOBAL OPTION echo TO TRUE
+##### SET GLOBAL OPTION echo TO TRUE
 opts_chunk$set(echo=TRUE)
-# SET WORKING DIRECTORY
+##### SET WORKING DIRECTORY
 setwd("C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssessment1")
 ```
 
@@ -29,11 +29,16 @@ setwd("C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssessment1
 always unzip the file and override activity.csv- run time OK.
 
 ```{r LoadPreprocess}
-# UNZIP THE ARCHIVE
+##### UNZIP THE ARCHIVE
 unzip(zipfile="activity.zip")
-# READ THE INPUT FILE
+##### READ THE INPUT FILE
 data <- read.table(file="activity.csv", header=TRUE, sep=",", 
 	colClasses=c("numeric","character","integer"))
+str(data)
+head(data)
+summary(data)
+# FORMAT DATA
+data[,2] <- as.Date(data[,2], "%Y-%m-%d")
 str(data)
 head(data)
 summary(data)

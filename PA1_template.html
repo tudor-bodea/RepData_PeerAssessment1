@@ -205,13 +205,13 @@ hr {
 
 <p>The following <strong>(i)</strong> removes (almost) everything in the working <code>R</code> environment, <strong>(ii)</strong> loads the contributed <code>R</code> package <code>knitr</code> and sets its global option <code>echo</code> for all <code>R</code> code chunks to <code>TRUE</code>, and <strong>(iii)</strong> sets the working directory. Unless otherwise specified, <code>opts_chunk$set(echo=TRUE)</code> requires <code>R</code> through <code>knitr</code> to include the <code>R</code> source code in the output file. </p>
 
-<pre><code class="r"># REMOVE ALMOST EVERYTHING IN THE WORKING ENVIRONMENT
+<pre><code class="r">##### REMOVE ALMOST EVERYTHING IN THE WORKING ENVIRONMENT
 rm(list=ls(all=TRUE))
-# LOAD THE knitr PACKAGE
+##### LOAD THE knitr PACKAGE
 library(knitr)
-# SET GLOBAL OPTION echo TO TRUE
+##### SET GLOBAL OPTION echo TO TRUE
 opts_chunk$set(echo=TRUE)
-# SET WORKING DIRECTORY
+##### SET WORKING DIRECTORY
 setwd(&quot;C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssessment1&quot;)
 </code></pre>
 
@@ -219,9 +219,9 @@ setwd(&quot;C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssess
 
 <p>always unzip the file and override activity.csv- run time OK.</p>
 
-<pre><code class="r"># UNZIP THE ARCHIVE
+<pre><code class="r">##### UNZIP THE ARCHIVE
 unzip(zipfile=&quot;activity.zip&quot;)
-# READ THE INPUT FILE
+##### READ THE INPUT FILE
 data &lt;- read.table(file=&quot;activity.csv&quot;, header=TRUE, sep=&quot;,&quot;, 
     colClasses=c(&quot;numeric&quot;,&quot;character&quot;,&quot;integer&quot;))
 str(data)
@@ -255,6 +255,42 @@ str(data)
 ##  Mean   : 37.38                      Mean   :1177.5  
 ##  3rd Qu.: 12.00                      3rd Qu.:1766.2  
 ##  Max.   :806.00                      Max.   :2355.0  
+##  NA&#39;s   :2304
+</code></pre>
+
+<pre><code class="r"># FORMAT DATA
+data[,2] &lt;- as.Date(data[,2], &quot;%Y-%m-%d&quot;)
+str(data)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    17568 obs. of  3 variables:
+##  $ steps   : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ date    : Date, format: &quot;2012-10-01&quot; &quot;2012-10-01&quot; ...
+##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
+</code></pre>
+
+<pre><code class="r">head(data)
+</code></pre>
+
+<pre><code>##   steps       date interval
+## 1    NA 2012-10-01        0
+## 2    NA 2012-10-01        5
+## 3    NA 2012-10-01       10
+## 4    NA 2012-10-01       15
+## 5    NA 2012-10-01       20
+## 6    NA 2012-10-01       25
+</code></pre>
+
+<pre><code class="r">summary(data)
+</code></pre>
+
+<pre><code>##      steps             date               interval     
+##  Min.   :  0.00   Min.   :2012-10-01   Min.   :   0.0  
+##  1st Qu.:  0.00   1st Qu.:2012-10-16   1st Qu.: 588.8  
+##  Median :  0.00   Median :2012-10-31   Median :1177.5  
+##  Mean   : 37.38   Mean   :2012-10-31   Mean   :1177.5  
+##  3rd Qu.: 12.00   3rd Qu.:2012-11-15   3rd Qu.:1766.2  
+##  Max.   :806.00   Max.   :2012-11-30   Max.   :2355.0  
 ##  NA&#39;s   :2304
 </code></pre>
 
