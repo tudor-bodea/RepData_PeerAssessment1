@@ -29,9 +29,12 @@ setwd("C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssessment1
 always unzip the file and override activity.csv- run time OK.
 
 ```{r LoadPreprocess}
+# UNZIP THE ARCHIVE
 unzip(zipfile="activity.zip")
+# READ THE INPUT FILE
 data <- read.table(file="activity.csv", header=TRUE, sep=",", 
 	colClasses=c("numeric","character","integer"))
+str(data)
 head(data)
 summary(data)
 ```

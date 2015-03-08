@@ -219,10 +219,21 @@ setwd(&quot;C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssess
 
 <p>always unzip the file and override activity.csv- run time OK.</p>
 
-<pre><code class="r">unzip(zipfile=&quot;activity.zip&quot;)
+<pre><code class="r"># UNZIP THE ARCHIVE
+unzip(zipfile=&quot;activity.zip&quot;)
+# READ THE INPUT FILE
 data &lt;- read.table(file=&quot;activity.csv&quot;, header=TRUE, sep=&quot;,&quot;, 
     colClasses=c(&quot;numeric&quot;,&quot;character&quot;,&quot;integer&quot;))
-head(data)
+str(data)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    17568 obs. of  3 variables:
+##  $ steps   : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ date    : chr  &quot;2012-10-01&quot; &quot;2012-10-01&quot; &quot;2012-10-01&quot; &quot;2012-10-01&quot; ...
+##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
+</code></pre>
+
+<pre><code class="r">head(data)
 </code></pre>
 
 <pre><code>##   steps       date interval

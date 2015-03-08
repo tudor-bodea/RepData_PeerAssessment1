@@ -31,9 +31,22 @@ always unzip the file and override activity.csv- run time OK.
 
 
 ```r
+# UNZIP THE ARCHIVE
 unzip(zipfile="activity.zip")
+# READ THE INPUT FILE
 data <- read.table(file="activity.csv", header=TRUE, sep=",", 
 	colClasses=c("numeric","character","integer"))
+str(data)
+```
+
+```
+## 'data.frame':	17568 obs. of  3 variables:
+##  $ steps   : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ date    : chr  "2012-10-01" "2012-10-01" "2012-10-01" "2012-10-01" ...
+##  $ interval: int  0 5 10 15 20 25 30 35 40 45 ...
+```
+
+```r
 head(data)
 ```
 
