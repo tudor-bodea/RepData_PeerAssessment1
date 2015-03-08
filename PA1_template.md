@@ -27,9 +27,18 @@ setwd("C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssessment1
 
 ## Loading and preprocessing the data
 
+always unzip the file and override activity.csv- run time OK.
+
 
 ```r
 unzip(zipfile="activity.zip")
+data <- read.table(file="activity.csv", header=TRUE, sep=",", 
+	colClasses=c("numeric","character","integer"))
+summarize(data)
+```
+
+```
+## Error in eval(expr, envir, enclos): could not find function "summarize"
 ```
 
 
