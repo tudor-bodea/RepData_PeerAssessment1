@@ -203,9 +203,9 @@ hr {
 <body>
 <h2>Setup the R environment</h2>
 
-<p>The following sets the global option <code>echo</code> for all <code>R</code> code chunks to <code>TRUE</code>. Implicitly and unless otherwise specified, this requires <code>R</code> through <code>knitr</code> to include the <code>R</code> source code in the output file. </p>
+<p>The following (i) removes (almost) everything in the working <code>R</code> environment, (ii) loads the contributed <code>R</code> package <code>knitr</code> and sets its global option <code>echo</code> for all <code>R</code> code chunks to <code>TRUE</code>, and (iii) sets the working directory. Unless otherwise specified, <code>opts_chunk$set(echo=TRUE)</code> requires <code>R</code> through <code>knitr</code> to include the <code>R</code> source code in the output file. </p>
 
-<pre><code class="r"># REMOVE ALMOST EVERYTHING FROM THE ENVIRONMENT
+<pre><code class="r"># REMOVE ALMOST EVERYTHING IN THE WORKING ENVIRONMENT
 rm(list=ls(all=TRUE))
 # LOAD THE knitr PACKAGE
 library(knitr)

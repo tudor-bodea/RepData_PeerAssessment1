@@ -9,11 +9,11 @@ output:
 
 ## Setup the R environment
 
-The following sets the global option `echo` for all `R` code chunks to `TRUE`. Implicitly and unless otherwise specified, this requires `R` through `knitr` to include the `R` source code in the output file. 
+The following (i) removes (almost) everything in the working `R` environment, (ii) loads the contributed `R` package `knitr` and sets its global option `echo` for all `R` code chunks to `TRUE`, and (iii) sets the working directory. Unless otherwise specified, `opts_chunk$set(echo=TRUE)` requires `R` through `knitr` to include the `R` source code in the output file. 
 
 
 ```r
-# REMOVE ALMOST EVERYTHING FROM THE ENVIRONMENT
+# REMOVE ALMOST EVERYTHING IN THE WORKING ENVIRONMENT
 rm(list=ls(all=TRUE))
 # LOAD THE knitr PACKAGE
 library(knitr)
