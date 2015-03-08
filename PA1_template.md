@@ -8,9 +8,7 @@ output:
 
 
 ## TEST - Tudor
-```{r setoptions, echo=FALSE}
-opts_chunk$set(echo=FALSE)
-```
+
 
 
 

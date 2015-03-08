@@ -1,0 +1,6 @@
+rm(list=ls(all=TRUE))
+library(knitr)
+setwd("C:\\Work\\Personal\\Personal\\Coursera\\5-ReproducibleResearch\\PeerAssessment1")
+knit2html("PA1_template.Rmd")
+browseURL("PA1_template.html")
+q("no")
