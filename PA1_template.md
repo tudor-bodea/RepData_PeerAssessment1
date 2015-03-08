@@ -28,6 +28,10 @@ setwd("C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssessment1
 ## Loading and preprocessing the data
 
 
+```r
+unzip(zipfile="activity.zip")
+```
+
 
 ## What is mean total number of steps taken per day?
 

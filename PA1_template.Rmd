@@ -11,7 +11,7 @@ output:
 
 The following **(i)** removes (almost) everything in the working `R` environment, **(ii)** loads the contributed `R` package `knitr` and sets its global option `echo` for all `R` code chunks to `TRUE`, and **(iii)** sets the working directory. Unless otherwise specified, `opts_chunk$set(echo=TRUE)` requires `R` through `knitr` to include the `R` source code in the output file. 
 
-```{r setoptions, echo=TRUE}
+```{r SetOptions, echo=TRUE}
 # REMOVE ALMOST EVERYTHING IN THE WORKING ENVIRONMENT
 rm(list=ls(all=TRUE))
 # LOAD THE knitr PACKAGE
@@ -26,6 +26,9 @@ setwd("C:/Work/Personal/Personal/Coursera/5-ReproducibleResearch/PeerAssessment1
 
 ## Loading and preprocessing the data
 
+```{r LoadPreprocess}
+unzip(zipfile="activity.zip")
+```
 
 
 ## What is mean total number of steps taken per day?
